@@ -2,6 +2,7 @@ const router = require("express").Router();
 const User = require("../Modals/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const Post = require("../Modals/Post"); 
 const JWTSEC = "@#$%35sldfn";
 const {verifyToken} = require("./verifytoken")
 const { body, validationResult } = require('express-validator');
@@ -82,6 +83,7 @@ router.post("/login", async(req,res)=>{
 router.put("/following/:id", verifyToken, async(req,res)=>{
     if(req.params.id !== req.body.user){
         const user = await User.findById(req.params.id);
+        
         const otheruser = await User.findById(req.body.user);
         
 
@@ -97,7 +99,73 @@ router.put("/following/:id", verifyToken, async(req,res)=>{
     }
 })
 
+//Fetch post from followers
+
+router.get("/flw/:id" , verifyToken , async(req , res)=>{
+    try {
+        const user = await User.findById(req.params.id);
+        const followersPost = await Promise.all(
+            user.Following.map((item)=>{
+                return Post.find({user:item})
+            })
+        )
+        const userPost = await Post.find({user:user._id});
+
+        res.status(200).json(userPost.concat(...followersPost));
+    } catch (error) {
+        return res.status(500).json("Internal server error")
+    }
+})
 
 
+//Get Followers list
+router.get("/followers/:id", verifyToken, async(req,res)=>{
+    try {
+        const user = await User.findById(req.params.id)
+
+        res.status(200).json(user.Followers);
+    } catch (error) {
+        res.status(400).json("Error here");
+    }
+})
+
+//Update Profile
+
+router.put("/update/:id" , verifyToken , async(req , res)=>{
+    try {
+        if(req.params.id === req.user.id){
+            if(req.body.password){
+                const salt = await bcrypt.genSalt(10);
+                const secpass = await bcrypt.hash(req.body.password , salt);
+                req.body.password = secpass;
+                const updateuser = await User.findByIdAndUpdate(req.params.id , {
+                    $set:req.body
+                });
+                await updateuser.save();
+                res.status(200).json(updateuser);
+            }
+        }else{
+            return res.status(400).json("Your are not allow to update this user details ")
+        }
+    } catch (error) {
+        return res.status(500).json("Internal server error")
+    }
+})
+
+//Delete User Account
+
+router.delete("/delete/:id", verifyToken, async(req,res)=>{
+    try {
+        if(req.user.id !== req.user.id){
+            return 	res.status(403).send('You can only delete your own account');
+        }else{
+            await User.findByIdAndDelete(req.params.id);
+            return res.status(200).json("User has been deleted.");
+        }
+
+    } catch (error) {
+        return res.status(400).json("Internal Server Error");
+    }
+})
 
 module.exports = router;
