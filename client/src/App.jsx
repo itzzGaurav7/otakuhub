@@ -22,7 +22,6 @@ function App() {
         <ThemeProvider theme={theme}>
         <CssBaseline/>
         <Routes>
-          <Route path='/' element={<Navbar/>}/>
           <Route path='/home' element={<HomePage/>}/>
           <Route path='/profile' element={<ProfilePage/>}/>
           <Route path='/login' element={<LoginPage/>}/>
