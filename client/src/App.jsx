@@ -4,9 +4,9 @@ import HomePage from "@scenes/homepage";
 import Navbar from '@scenes/navbar';
 import ProfilePage from '@scenes/profilepage';
 import LoginPage from '@scenes/loginpage';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
-import { CssBaseline, ThemeProvider } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 import { themeSettings } from './theme';
 

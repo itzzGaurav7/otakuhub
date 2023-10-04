@@ -34,9 +34,9 @@ function Navbar() {
   const alt = theme.palette.background.alt;
   const fullName =`Gaurav Upadhyay`;
   return (  
-    <FlexBetween padding="2rem 7%" backgroundColor={alt}>
-      <FlexBetween gap='5rem'>
-        <Typography fontWeight="bold" fontSize="clamp(1rem,2rem,2,25rem)" color="primary" onClick={() => navigate("/home")}>
+    <FlexBetween padding="2rem 10%" backgroundColor={alt}>
+
+        <Typography fontWeight="bold" fontSize="clamp(1rem,2rem,2.25rem)" color="primary" onClick={() => navigate("/home")}>
           OtakuHub
         </Typography>
         {/* DesktopNav */}
@@ -56,6 +56,7 @@ function Navbar() {
               ) : (
                 <LightMode sx={{ color: dark, fontSize: "25px" }} />
               )}
+            </IconButton>  
               <Message sx={{ fontSize: "25px" }} />
               <Notifications sx={{ fontSize: "25px" }} />
               <Help sx={{ fontSize: "25px" }} />
@@ -83,8 +84,8 @@ function Navbar() {
                 <MenuItem value={fullName}><Typography>{fullName}</Typography></MenuItem>
               </Select>
             </FormControl>
-          </IconButton>
-            </FlexBetween>
+          
+          </FlexBetween>
       ):(
         <IconButton
         onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
@@ -152,8 +153,8 @@ function Navbar() {
       )}
       
         
-    </FlexBetween>
-      </FlexBetween >
+    
+  </FlexBetween >
   )
 }
 
