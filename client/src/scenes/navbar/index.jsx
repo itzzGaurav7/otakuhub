@@ -32,7 +32,8 @@ function Navbar() {
   const user = useSelector((state => state.user));
   const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
-  const fullName =`Gaurav Upadhyay`;
+
+  const fullName =`${user.firstName} ${user.lastName}`;
   return (  
     <FlexBetween padding="2rem 10%" backgroundColor={alt}>
 
@@ -82,6 +83,9 @@ function Navbar() {
 
 
                 <MenuItem value={fullName}><Typography>{fullName}</Typography></MenuItem>
+                <MenuItem onClick={() => dispatch(setLogout())}>
+                  Log Out
+                </MenuItem>
               </Select>
             </FormControl>
           
@@ -141,10 +145,13 @@ function Navbar() {
               }}
               input={<InputBase />}
             >
+              
               <MenuItem value={fullName}>
-                <Typography>{fullName}</Typography>
-              </MenuItem>
-              <MenuItem onClick={() => dispatch(setLogout())}>Log Out</MenuItem>
+                  <Typography>{fullName}</Typography>
+                </MenuItem>
+                <MenuItem onClick={() => dispatch(setLogout())}>
+                  Log Out
+                </MenuItem>
             </Select>
           </FormControl>
         </FlexBetween>
