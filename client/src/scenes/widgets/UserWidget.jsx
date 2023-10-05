@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux/es/hooks/useSelector'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function UserWidget(userId, picturePath) {
+function UserWidget({userId, picturePath}) {
     const [user, setUser] = useState(null);
     const {palette} = useTheme();
     const navigate = useNavigate();
@@ -19,10 +19,11 @@ function UserWidget(userId, picturePath) {
     const main = palette.neutral.main;
     
     const getUser = async()=>{
-        const response = await fetch(`http://localhost:6001/users/${userId}`,
+        const URL = `http://localhost:6001/users/${userId}`;
+        const response = await fetch(URL,
         {           
             method:"GET",
-            headers:{Authorization:`${token}`},
+            headers: { Authorization: `Bearer ${token}` },
 
         }
         );
@@ -33,7 +34,7 @@ function UserWidget(userId, picturePath) {
     };
     useEffect(()=>{
         getUser();
-    },[]) 
+    },[]);
     if(!user){
         return null;
     }
@@ -44,15 +45,17 @@ function UserWidget(userId, picturePath) {
         occupation,
         viewedProfile,
         impressions,
-        friends,
+        friends,    
 
     } = user;
 
     return(
+        
         <WidgetWrapper>
             <FlexBetween
             gap = "0.5rem"
             pb="1.1rem"
+        
             onClick={()=>navigate(`/profile/${userId}`)}
             >
                 <FlexBetween gap='1rem'>
@@ -79,9 +82,9 @@ function UserWidget(userId, picturePath) {
                         </Typography>
                         
                     </Box>
-                        <ManageAccountsOutlined/>
                 </FlexBetween>
-
+                <ManageAccountsOutlined/>
+            </FlexBetween>
                 <Divider/>
 
                 <Box p ='1rem'>
@@ -97,7 +100,7 @@ function UserWidget(userId, picturePath) {
 
                     </Box>
                 </Box>
-
+                <Divider/>
                 <Box p='1rem 0'>
                     <FlexBetween mb='0.5rem'>
                         <Typography color={medium}> Who's viewed profile</Typography>
@@ -113,6 +116,7 @@ function UserWidget(userId, picturePath) {
                     </FlexBetween>
 
                 </Box>
+                <Divider/>
 
                 <Box p='1rem'>
                     <FlexBetween gap='1rem' mb='0.5rem'>
@@ -123,10 +127,9 @@ function UserWidget(userId, picturePath) {
 
                 </Box>
 
-            </FlexBetween>
         </WidgetWrapper>
 
     )
 }
 
-export default UserWidget
+export default UserWidget;
