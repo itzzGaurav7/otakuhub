@@ -168,7 +168,7 @@ function Form() {
                                         }}
                                     />
                                     <TextField
-                                        label="Occupation"
+                                        label="Favorite Anime"
                                         onBlur={handleBlur}
                                         onChange={handleChange}
                                         value={values.occupation}
