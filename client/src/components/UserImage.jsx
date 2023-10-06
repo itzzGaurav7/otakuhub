@@ -2,7 +2,7 @@ import { Box,Avatar } from "@mui/material";
 import AvatarGen from "./AvatarGen";
 
 const UserImage = ({ image, name = 'Otaku', size = "60px" }) => {
-  if(image != "null"){
+  if(image != "null" && image != 'undefined'){
     return(
     <Box width={size} height={size}>
       <img
