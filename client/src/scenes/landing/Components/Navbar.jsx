@@ -12,15 +12,14 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
-import { useDispatch } from "react-redux";
-
+import { useState } from "react";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 
 const Navbar = () => {
-  const dispatch = useDispatch();
+ 
   const navigate = useNavigate();
   const handleClick = ()=>{
 
@@ -48,9 +47,9 @@ const Navbar = () => {
               className="main-logo"/>
       </div>
       <div className="navbar-links-container">
-        <a href="">Home</a>
-        <a href="">About</a>
-        <a href="">Contact</a>
+        <AnchorLink href="#home">Home</AnchorLink>
+        <AnchorLink href="#about">About</AnchorLink>
+        <AnchorLink href="#contact">Contact</AnchorLink>
         <button className="primary-button" onClick={handleClick}>Log In</button>
       </div>
       <div className="navbar-menu-container">

@@ -79,20 +79,20 @@ import {
               </IconButton>
               <Typography>{likeCount}</Typography>
             </FlexBetween>
-  
+{/*   
             <FlexBetween gap="0.3rem">
               <IconButton onClick={() => setIsComments(!isComments)}>
                 <ChatBubbleOutlineOutlined />
               </IconButton>
               <Typography>{comments.length}</Typography>
+            </FlexBetween> */}
             </FlexBetween>
-          </FlexBetween>
   
           <IconButton>
             <ShareOutlined />
           </IconButton>
         </FlexBetween>
-        {isComments && (
+        {/* {isComments && (
           <Box mt="0.5rem">
             {comments.map((comment, i) => (
               <Box key={`${name}-${i}`}>
@@ -104,7 +104,7 @@ import {
             ))}
             <Divider />
           </Box>
-        )}
+        )} */}
       </WidgetWrapper>
     );
   };

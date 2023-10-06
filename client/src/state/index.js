@@ -32,13 +32,13 @@ export const authSlice = createSlice({
         setPosts:(state,action)=>{
             state.posts = action.payload.posts;
         },
-        setPost:(state,action)=>{
-            const updatedPosts = state.post.map((post)=>{
-                if(post._id === action.payload.post_id) return action.payload.post;
-                return post;
+        setPost: (state, action) => {
+            const updatedPosts = state.posts.map((post) => {
+              if (post._id === action.payload.post._id) return action.payload.post;
+              return post;
             });
-            state.post = updatedPosts;
-        }
+            state.posts = updatedPosts;
+          },
     }
 });
 export const {setFriends, setLogin, setLogout, setMode, setPost, setPosts } = authSlice.actions;

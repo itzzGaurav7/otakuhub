@@ -10,7 +10,7 @@ const Home = () => {
     navigate("/register");
   }
   return (
-    <div className="home-container">
+    <div className="home-container" id="home">
       <Navbar />
       <div className="home-banner-container">
         <div className="home-bannerImage-container">
