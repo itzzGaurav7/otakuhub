@@ -59,7 +59,7 @@ function Form() {
         formData.append('picturePath', values.picture.name);
 
         const savedUserResponse = await fetch(
-            "http://localhost:6001/auth/register",
+            "https://otakuhub-api-eta.vercel.app/auth/register",
             {
                 method: "POST",
                 body: formData,
@@ -76,7 +76,7 @@ function Form() {
 
 
         const loggedInResponse = await fetch(
-            "http://localhost:6001/auth/login",
+            "https://otakuhub-api-eta.vercel.app/auth/login",
             {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },

@@ -20,7 +20,7 @@ function UserWidget({userId, picturePath}) {
     const main = palette.neutral.main;
     
     const getUser = async()=>{
-        const URL = `http://localhost:6001/users/${userId}`;
+        const URL = `https://otakuhub-api-eta.vercel.app/users/${userId}`;
         const response = await fetch(URL,
         {           
             method:"GET",
