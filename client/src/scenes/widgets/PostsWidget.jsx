@@ -37,7 +37,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     }
   }, []); 
 
-  const latestPost = [...posts].reverse();
+  // const latestPost = [...posts].reverse();
 
   return (
     <>
