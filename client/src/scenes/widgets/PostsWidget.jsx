@@ -41,7 +41,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
 
   return (
     <>
-      {latestPost.map(
+      {posts.map(
         ({
           _id,
           userId,
