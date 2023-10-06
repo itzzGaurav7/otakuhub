@@ -5,7 +5,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite'
 import {Box, Typography,Divider,useTheme} from '@mui/material'
 import UserImage from '@components/UserImage'
 import FlexBetween from '@components/FlexBetween'
-import WidgetWrapper from '@components/WidgetWrapper'
+import WidgetWrapper2 from '@components/WidgetWrapper2'
 import { useSelector } from 'react-redux/es/hooks/useSelector'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -52,14 +52,18 @@ function UserWidget({userId, picturePath}) {
 
     return(
         
-        <WidgetWrapper>
+        <WidgetWrapper2
+           sx
+        >
             <FlexBetween
             gap = "0.5rem"
             pb="1rem"
         
             onClick={()=>navigate(`/profile/${userId}`)}
             >
-                <FlexBetween gap='1rem'>
+                <FlexBetween gap='0.5rem' sx={{
+                    
+                }}>
                     <UserImage image={picturePath} name={firstName}/>
                     <Box>
                         <Typography
@@ -69,7 +73,8 @@ function UserWidget({userId, picturePath}) {
                         sx={{
                             "&:hover":{
                                 color:palette.primary.light,
-                                cursor:"pointer"
+                                cursor:"pointer",
+                                
                             }
                         }}
                         >
@@ -134,7 +139,7 @@ function UserWidget({userId, picturePath}) {
 
                 </Box>
 
-        </WidgetWrapper>
+        </WidgetWrapper2>
 
     )
 }

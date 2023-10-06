@@ -10,6 +10,7 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setPosts } from '@state'
 function MyPostWidget({picturePath}) {
+    
 
     const dispatch = useDispatch();
     const [isImage, setIsImage] = useState(false);
@@ -17,6 +18,7 @@ function MyPostWidget({picturePath}) {
     const [post, setPost] = useState("");
     const { palette } = useTheme();
     const { _id } = useSelector((state) => state.user);
+    const name = useSelector((state) => state.user.firstName);
     const token = useSelector((state) => state.token);
     const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
     const mediumMain = palette.neutral.mediumMain;
@@ -46,9 +48,9 @@ function MyPostWidget({picturePath}) {
     return (
         <WidgetWrapper>
             <FlexBetween gap='1.5rem'>
-                <UserImage image={picturePath} />
+                <UserImage image={picturePath} name={name} />
                 <InputBase
-                    placeholder='Whats in your mind....'
+                    placeholder='Tell us about the anime you watched last night being sleep deprived...'
                     onChange={(e) => setPost(e.target.value)}
                     value={post}
                     sx={{

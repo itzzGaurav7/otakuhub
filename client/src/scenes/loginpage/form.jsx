@@ -43,8 +43,8 @@ const initialValueLogin = {
     email: "",
     password: "",
 }
-function Form(state="register") {
-    const [pageType, setPageType] = useState({state});
+function Form() {
+    const [pageType, setPageType] = useState("login");
     const { palette } = useTheme();
     const dispatch = useDispatch();
     let navigate = useNavigate();
@@ -167,20 +167,9 @@ function Form(state="register") {
                                             gridColumn: "span 2"
                                         }}
                                     />
-                                    <TextField
-                                        label="Occupation"
-                                        onBlur={handleBlur}
-                                        onChange={handleChange}
-                                        value={values.occupation}
-                                        name='occupation'
-                                        error={Boolean(touched.occupation) && Boolean(errors.occupation)}
-                                        helperText={touched.occupation && errors.occupation}
-                                        sx={{
-                                            gridColumn: "span 2"
-                                        }}
-                                    />
+                                    
                                     <Box
-                                        gridColumn="span 4"
+                                        gridColumn="span 2"
                                         border={`1px solid ${palette.neutral.medium}`}
                                         borderRadius='5px'
                                         p='1rem'

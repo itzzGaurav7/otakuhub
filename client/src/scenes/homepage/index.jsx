@@ -21,7 +21,7 @@ function HomePage() {
       gap='1rem'
       justifyContent='space-between'
       >
-        <Box flexBasis={isNonMobileScreens?"5%":undefined} mr='2rem'>
+        <Box>
 
           <UserWidget userId={_id} picturePath={picturePath} />
           <Box m='1.5rem 0'>
@@ -30,18 +30,18 @@ function HomePage() {
           
 
         </Box>
-        <Box flexBasis={isNonMobileScreens? "42%":undefined}
+        <Box
         
-            mt={isNonMobileScreens?undefined:"1.5rem"}
+            
           >
 
           <MyPostWidget picturePath={picturePath}/>
           <PostsWidget userId={_id}/>
 
         </Box> 
-        {isNonMobileScreens && <Box flexBasis='26%'></Box>}
+        
         {isNonMobileScreens && (
-          <Box flexBasis="26%">
+          <Box>
             
             <AdvertWidget/>
             <Box m="1.5rem 0" />

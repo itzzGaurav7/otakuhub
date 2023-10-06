@@ -17,7 +17,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setMode, setLogout } from '@state';
 import FlexBetween from '@components/FlexBetween';
 import { useNavigate } from 'react-router-dom';
-import banner from '@components/assets/banner.jpeg'
+import logo from '@components/assets/logomain.png'
+
 
 
 
@@ -40,6 +41,10 @@ function Navbar() {
   const user = useSelector((state => state.user));
   const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
+  const clickHandle =()=>{
+    navigate('/home');
+    
+  }
 
   const fullName =`${user.firstName} ${user.lastName}`;
   return (  
@@ -52,10 +57,12 @@ function Navbar() {
     >
       
         <Box
+        onClick={clickHandle}
         
         m='1rem'
         sx={
           {
+            cursor:'pointer',
             display:'flex',
             justifyContent:"space-between",
             height:'4rem'
@@ -64,7 +71,7 @@ function Navbar() {
           }
         }
         >
-            <img src='assets/logomain.png'
+            <img src={logo}
               width='100%'
               height='auto'
               />

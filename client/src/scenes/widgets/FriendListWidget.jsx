@@ -38,8 +38,8 @@ const FriendListWidget = ({ userId }) => {
       >
         Friend List
       </Typography>
-    <FlexBetween margin='3rem'>
-      <Box display="flex" flexDirection="column" gap="1.5rem">
+    <FlexBetween margin='2rem'>
+      <Box display="flex" flexDirection="column" gap="2rem">
         {friends.map((friend) => (
           <Friend
             key={friend._id}
