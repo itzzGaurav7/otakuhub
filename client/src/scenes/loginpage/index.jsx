@@ -1,7 +1,7 @@
 import React from 'react'
 import {Box,Typography,useTheme,useMediaQuery} from '@mui/material'
 import Form from "./form"
-function LoginPage() {
+function LoginPage(state='register') {
   const theme = useTheme();
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
   return (
@@ -24,7 +24,7 @@ function LoginPage() {
       <Typography fontWeight='500' variant='h5' sx={{mb: "1.5rem"}}>
             OtakuSensei is here to Welcome you! Kneel My Pupil I shall enter you now.
       </Typography>
-      <Form/>
+      <Form state={state}/>
 
 
     </Box>

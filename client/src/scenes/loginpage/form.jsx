@@ -43,8 +43,8 @@ const initialValueLogin = {
     email: "",
     password: "",
 }
-function Form() {
-    const [pageType, setPageType] = useState("login");
+function Form(state="register") {
+    const [pageType, setPageType] = useState({state});
     const { palette } = useTheme();
     const dispatch = useDispatch();
     let navigate = useNavigate();
