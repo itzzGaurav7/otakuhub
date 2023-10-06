@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "@state";
 import PostWidget from "@scenes/widgets/PostWidget";
+import { array } from "yup";
 
 const PostsWidget = ({ userId, isProfile = false }) => {
   const dispatch = useDispatch();
@@ -37,11 +38,10 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     }
   }, []); 
 
-  // const latestPost = [...posts].reverse();
-
+  const latestPost = [...posts].reverse();  
   return (
     <>
-      {posts.map(
+      { latestPost.map(
         ({
           _id,
           userId,
