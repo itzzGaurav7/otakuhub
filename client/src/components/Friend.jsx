@@ -7,6 +7,7 @@ import FlexBetween from "@components/FlexBetween";
 import UserImage from "@components/UserImage";
 
 const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
+    console.log(userPicturePath);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { _id } = useSelector((state) => state.user);
@@ -39,7 +40,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   return (
     <FlexBetween gap='2rem'>
       <FlexBetween gap="1rem">
-        <UserImage image={userPicturePath} size="55px" />
+        <UserImage image={userPicturePath} name={name} size="55px" />
         <Box
           onClick={() => {
             navigate(`/profile/${friendId}`);

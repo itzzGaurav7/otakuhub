@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { createTheme } from '@mui/material/styles';
 import { themeSettings } from './theme';
 
+
 function App() {
 
   const mode = useSelector((state)=> state.mode);
@@ -17,7 +18,8 @@ function App() {
   const isAuth = Boolean(useSelector((state)=>state.token));
 
   return(
-    <div>
+    <div
+    >
       
       <BrowserRouter>
         <ThemeProvider theme={theme}>

@@ -17,9 +17,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setMode, setLogout } from '@state';
 import FlexBetween from '@components/FlexBetween';
 import { useNavigate } from 'react-router-dom';
+import banner from '@components/assets/banner.jpeg'
+
+
+
+//Main Navbar -- 
+// Updation List
+// Animated Logos.
+// Fucntions Settings Buttons..
 
 function Navbar() {
-
+  
 
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
   const dispatch = useDispatch();
@@ -35,11 +43,32 @@ function Navbar() {
 
   const fullName =`${user.firstName} ${user.lastName}`;
   return (  
-    <FlexBetween padding="2rem 10%" backgroundColor={alt}>
+    
+    <FlexBetween padding="1rem 6%" 
+      backgroundColor='transparent'
+      
+      
+    >
+      
+        <Box
+        
+        m='1rem'
+        sx={
+          {
+            display:'flex',
+            justifyContent:"space-between",
+            height:'4rem'
 
-        <Typography fontWeight="bold" fontSize="clamp(1rem,2rem,2.25rem)" color="primary" onClick={() => navigate("/home")}>
-          OtakuHub
-        </Typography>
+
+          }
+        }
+        >
+            <img src='assets/logomain.png'
+              width='100%'
+              height='auto'
+              />
+
+        </Box>
         {/* DesktopNav */}
         {isNonMobileScreens && (
           <FlexBetween backgroundColor={neutralLight} borderRadius='9px' gap="3rem" padding="0.1rem 1.5rem">
@@ -157,11 +186,13 @@ function Navbar() {
         </FlexBetween>
 
         </Box>
+
       )}
       
         
     
-  </FlexBetween >
+      </FlexBetween >
+  
   )
 }
 
