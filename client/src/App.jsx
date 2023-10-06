@@ -1,7 +1,5 @@
-import { useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import HomePage from "@scenes/homepage";
-import Navbar from '@scenes/navbar';
 import ProfilePage from '@scenes/profilepage';
 import LoginPage from '@scenes/loginpage';
 import { CssBaseline, ThemeProvider } from '@mui/material';

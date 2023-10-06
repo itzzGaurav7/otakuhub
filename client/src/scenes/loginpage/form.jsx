@@ -167,14 +167,32 @@ function Form() {
                                             gridColumn: "span 2"
                                         }}
                                     />
-                                    
+                                    <TextField
+                                        label="Occupation"
+                                        onBlur={handleBlur}
+                                        onChange={handleChange}
+                                        value={values.occupation}
+                                        name='occupation'
+                                        error={Boolean(touched.occupation) && Boolean(errors.occupation)}
+                                        helperText={touched.occupation && errors.occupation}
+                                        sx={{
+                                            gridColumn: "span 2"
+                                        }}
+                                    />
                                     <Box
-                                        gridColumn="span 2"
+                                        gridColumn="span 4"
                                         border={`1px solid ${palette.neutral.medium}`}
                                         borderRadius='5px'
                                         p='1rem'
 
                                     >
+                                        <Button
+                                            type="button"
+                    
+                                            
+                                            onClick={() => setFieldValue("picture", 'null')}
+                                            >Click here to have a default avatar
+                                        </Button>
                                         <Dropzone
                                             acceptedFiles=".jpg .jpeg .png"
                                             multiple={false}
@@ -200,10 +218,12 @@ function Form() {
                                                             <EditOutlinedIcon />
                                                         </FlexBetween>
                                                     )}
-
                                                 </Box>
                                             )}
                                         </Dropzone>
+                                                <Typography pt='1rem'>
+                                                    *this is a required field either select a image or click on default avatar.
+                                                </Typography>
                                     </Box>
 
 
