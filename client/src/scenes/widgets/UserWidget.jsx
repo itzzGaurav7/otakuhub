@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { ManageAccountsOutlined,EditOutlined,LocationOnOutlined,WorkOutlineOutlined } from '@mui/icons-material'
+import { ManageAccountsOutlined} from '@mui/icons-material'
+import FavoriteIcon from '@mui/icons-material/Favorite'
 import {Box, Typography,Divider,useTheme} from '@mui/material'
 import UserImage from '@components/UserImage'
 import FlexBetween from '@components/FlexBetween'
@@ -54,7 +55,7 @@ function UserWidget({userId, picturePath}) {
         <WidgetWrapper>
             <FlexBetween
             gap = "0.5rem"
-            pb="1.1rem"
+            pb="1rem"
         
             onClick={()=>navigate(`/profile/${userId}`)}
             >
@@ -88,9 +89,9 @@ function UserWidget({userId, picturePath}) {
                 <Divider/>
 
                 <Box p ='1rem'>
-                    <Box display='flex' alignItems='center' gap='1rem' mb='0.5rem'
+                    <Box display='flex' alignItems='center' gap='0.5rem' 
                     >
-                        <LocationOnOutlined fontSize='large' sx={{
+                        <FavoriteIcon fontSize='medium' sx={{
                             color:main
                         }}/>
                         <Typography>
@@ -103,14 +104,20 @@ function UserWidget({userId, picturePath}) {
                 <Divider/>
                 <Box p='1rem 0'>
                     <FlexBetween mb='0.5rem'>
-                        <Typography color={medium}> Who's viewed profile</Typography>
-                        <Typography color={main}> {viewedProfile}</Typography>
+                        <Typography color={medium}>Watchlisted</Typography>
+                        <Typography color={main}>10</Typography>
 
                         
                     </FlexBetween>
                     <FlexBetween mb='0.5rem'>
-                        <Typography color={medium}> Impressions</Typography>
-                        <Typography color={main}> {impressions}</Typography>
+                        <Typography color={medium}>Watching</Typography>
+                        <Typography color={main}>2</Typography>
+
+                        
+                    </FlexBetween>
+                    <FlexBetween>
+                        <Typography color={medium}> Completed</Typography>
+                        <Typography color={main}> 19</Typography>
 
                         
                     </FlexBetween>

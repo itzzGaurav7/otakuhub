@@ -100,7 +100,7 @@ function MyPostWidget({picturePath}) {
                                     </Box>
                                     {
                                         image && (
-                                            <IconButton onClick={() => setImage(null)}
+                                            <IconButton onClick={() => setIsImage(null)}
                                                 sx={{ width: '15%' }}
                                             >
                                                 <DeleteOutlined />
@@ -108,7 +108,7 @@ function MyPostWidget({picturePath}) {
                                             </IconButton>
 
                                         )
-                                    };
+                                    }
                                 </FlexBetween>
                             )}
                         </Dropzone>
@@ -117,7 +117,7 @@ function MyPostWidget({picturePath}) {
                 )}
                 <Divider sx={{ margin: '1.25rem 0' }} />
                 <FlexBetween gap='5rem'>
-                <FlexBetween gap='0.25rem' onClick={() => setImage(!isImage)}>
+                <FlexBetween gap='0.25rem' onClick={() => setIsImage(!isImage)}>
                     <ImageOutlined sx={{ color: mediumMain }} />
                     <Typography
                         color={mediumMain}
@@ -164,15 +164,15 @@ function MyPostWidget({picturePath}) {
                     disabled={!post}
                     onClick={handlePost}
                     sx={{
-                        color: palette.background.alt,
+                        color:palette.background.alt,
                         backgroundColor: palette.primary.main,
                         borderRadius: "3rem",
 
 
 
-                    }}
-                >
+                    }}>
                     POST
+                
                 </Button>
             </FlexBetween>
         </WidgetWrapper>

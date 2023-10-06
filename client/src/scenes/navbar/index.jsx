@@ -45,7 +45,8 @@ function Navbar() {
   return (  
     
     <FlexBetween padding="1rem 6%" 
-      backgroundColor='transparent'
+      backgroundColor={alt}
+      borderRadius='0rem 0rem 1rem 1rem'
       
       
     >
@@ -71,10 +72,10 @@ function Navbar() {
         </Box>
         {/* DesktopNav */}
         {isNonMobileScreens && (
-          <FlexBetween backgroundColor={neutralLight} borderRadius='9px' gap="3rem" padding="0.1rem 1.5rem">
+          <FlexBetween backgroundColor={neutralLight} borderRadius='9px' gap="10rem" padding="0.1rem 1.5rem">
             <InputBase placeholder='Explore' />
             <IconButton>
-              <Search />
+              <Search/>
             </IconButton>
           </FlexBetween>
         )}
@@ -87,15 +88,15 @@ function Navbar() {
                 <LightMode sx={{ color: dark, fontSize: "25px" }} />
               )}
             </IconButton>  
-              <Message sx={{ fontSize: "25px" }} />
+              {/* <Message sx={{ fontSize: "25px" }} />
               <Notifications sx={{ fontSize: "25px" }} />
-              <Help sx={{ fontSize: "25px" }} />
+              <Help sx={{ fontSize: "25px" }} /> */}
               <FormControl variant='standard' value={fullName}>
                 <Select
                 value={fullName}
                 sx={{
                   backgroundColor: neutralLight,
-                  width: "150px",
+                  width: "200px",
                   borderRadius: "0.25rem",
                   p: "0.25rem 1rem",
                   "& .MuiSvgIcon-root": {
@@ -153,9 +154,9 @@ function Navbar() {
               <LightMode sx={{ color: dark, fontSize: "25px" }} />
             )}
           </IconButton>
-          <Message sx={{ fontSize: "25px" }} />
+          {/* <Message sx={{ fontSize: "25px" }} />
           <Notifications sx={{ fontSize: "25px" }} />
-          <Help sx={{ fontSize: "25px" }} />
+          <Help sx={{ fontSize: "25px" }} /> */}
           <FormControl variant="standard" value={fullName}>
             <Select
               value={fullName}
