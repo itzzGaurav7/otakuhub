@@ -10,7 +10,7 @@ const UserImage = ({ image, name = 'Otaku', size = "60px" }) => {
         width={size}
         height={size}
         alt="user" 
-        src={`http://localhost:6001/assets/${image}`}
+        src={`https://otakuhub-api-eta.vercel.app/assets/${image}`}
       />
     </Box>)
   }else{
