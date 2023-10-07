@@ -34,7 +34,7 @@ npm run dev
 ![screencapture-otakuhub-zeta-vercel-app-login-2023-10-07-07_29_15](https://github.com/itzzGaurav7/otakuhub/assets/132614734/82da964e-0fbe-4191-bb2d-37036bed2c6e)
 
 #HomePage
-![main-qimg-a4af21e66bf335829dfab0e6521285d4](https://github.com/itzzGaurav7/otakuhub/assets/132614734/1879fec1-0bc4-47f3-98f0-2a1130021b2d)
+![screencapture-otakuhub-zeta-vercel-app-home-2023-10-07-07_27_44](https://github.com/itzzGaurav7/otakuhub/assets/132614734/1ece7d34-c03a-4c02-8261-bbb0f75c3059)
 
 
 
